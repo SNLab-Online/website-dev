@@ -374,6 +374,32 @@ site_footer:
   br: '<br>'
 ############################### Site Footer ############################### > end
 
+############################### Site Comments ############################### > start
+comments:
+  service: giscus
+  # giscus
+  # https://giscus.app
+  # https://github.com/laymonage/giscus
+  giscus:
+    enable: true
+    repo: 'SNLab-Online/website-dev'
+    repo_id: 'R_kgDOLh1wZg'
+    category: 'Announcements'
+    category_id: 'DIC_kwDOLh1wZs4CeC8s'
+    # Available values: pathname | url | title | og:title
+    mapping: pathname
+    # Available values: 0 | 1
+    reactions_enabled: 1
+    # Available values: 0 | 1
+    emit_metadata: 0
+    # Available values: en | zh-C
+    lang: zh-CN
+    # Available value: anonymous
+    crossorigin: anonymous
+    theme:
+      light: "light" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
+      dark: "dark" # https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
+############################### Site Comments ############################### > end
 
 ############################### Analytics ############################### > start
 analytics:
