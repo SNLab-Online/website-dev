@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Fuzzing模糊测试——带你初入模糊测试时代
-author: SecureNexusLab
+author: Kidder1
 cover: true
 sidebar: []
 readmore: true
