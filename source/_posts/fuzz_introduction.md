@@ -12,7 +12,6 @@ tags:
 - FUZZ
 categories:
 - 公众号推文
-
 ---
 
 模糊测试，又称为模糊化测试或模糊化，是一种测试软件的方法。其核心思想是将自动生成或半自动生成的随机数据注入到程序中，然后监视程序的异常行为，如崩溃或断言失败，以便发现潜在的程序错误，比如内存泄漏。通常，模糊测试被广泛应用于揭示软件或计算机系统的安全漏洞。
@@ -68,9 +67,23 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {    ...
 
 我们来查看官方的例子
 
-```
-fuzz_me.c
-#include#includebool FuzzMe(const uint8_t *Data, size_t DataSize) {  return DataSize >= 3 &&      Data[0] == 'F' &&      Data[1] == 'U' &&      Data[2] == 'Z' &&      Data[3] == 'Z';  // :‑<}extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {  FuzzMe(Data, Size);  return 0;}
+```c++
+//fuzz_me.cc
+#include <stdint.h>
+#include <stddef.h>
+
+bool FuzzMe(const uint8_t *Data, size_t DataSize) {
+  return DataSize >= 3 &&
+      Data[0] == 'F' &&
+      Data[1] == 'U' &&
+      Data[2] == 'Z' &&
+      Data[3] == 'Z';  // :‑<
+}
+
+extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
+  FuzzMe(Data, Size);
+  return 0;
+}
 ```
 
 要为此目标构建模糊器二进制文件，使用最新的 Clang 编译器编译源代码带有以下的参数：
